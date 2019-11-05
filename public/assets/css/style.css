@@ -1,0 +1,81 @@
+body {
+  background-image: url(../img/chzbgr-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgb(127, 25, 23);
+  text-align: center;
+  color: white;
+}
+
+div.jumbo-logo {
+  text-align: center;
+  background-color: transparent !important;
+}
+
+img.chzbgr-logo{
+  animation-name: flipInX;
+  -webkit-animation-name: flipInX;
+  animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+}
+
+li.list-group-item {
+  background-color: transparent;
+}
+
+button {
+  padding: .5%;
+}
+
+button.add-burger {
+  margin-top: 2%; 
+}
+
+button.not-devoured {
+  margin-left: 2%; 
+}
+
+button.devoured {
+  margin-left: 2%; 
+}
+
+div.burger-add {
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+div.burgers-to-eat {
+  background-color: rgba(0, 0, 0, .5);
+  padding-top: 2%;
+  color: white;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+div.burgers-eaten {
+  background-color: rgba(0, 0, 0, .5);
+  padding-top: 2%;
+  color: white;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+h4 {
+  text-align: center;
+  color: white;
+}
+
+div.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding-bottom: 1%;
+  font-size: 8pt;
+}
