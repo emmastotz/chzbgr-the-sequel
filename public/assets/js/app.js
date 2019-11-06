@@ -10,7 +10,7 @@ $(function () {
     console.log(newBurger.burger_name);
     console.log(id);
 
-    $.ajax("/api/burgers/", {
+    $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
     }).then(function () {
@@ -24,18 +24,18 @@ $(function () {
     console.log(id);
 
     var devouredState = {
-      full: true,
+      devoured: true,
     };
 
 
-    $.ajax("/api/burgers/update/" + id, {
+    $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: devouredState
-    }).success(function () {
+    }).then(function () {
       console.log("Devoured burger #", id);
       location.reload();
     }).fail(function(err){
-      console.log("Error: " + err);
+      console.log(err);
     });
   });
 
@@ -43,14 +43,14 @@ $(function () {
     var id = $(this).data("id");
     console.log(id);
 
-    var devouredState = {
-      full: true,
-    };
+    // var devouredState = {
+    //   devoured: true,
+    // };
 
-    $.ajax("/api/burgers/delete/" + id, {
-      type: "DELETE",
-      data: devouredState
-    }).success(function () {
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
+      // data: devouredState
+    }).then(function () {
       console.log("Deleted burger #", id);
       location.reload();
     }).fail(function(err){

@@ -11,7 +11,6 @@ module.exports = function(app) {
       var burgerObj = {
         burgers: result
       };
-      console.log(burgerObj);
       res.render("index", burgerObj);
     }).catch(function(err){
       res.json(400, err);
@@ -19,24 +18,21 @@ module.exports = function(app) {
   });
   // ====================================================
   app.post("/api/burgers", function(req, res){
-    console.log(req.body);
     db.Burgers.create({
       burger_name: req.body.burger_name
     }).then(function(result){
       res.json(result);
     }).catch(function(err){
-      console.log("this is here : ");
       res.json(400, err);
     });
   });
   // ====================================================
   app.put("/api/burgers/:id", function(req, res) {
-    
+    console.log(req.body.devoured);
     db.Burgers.update({
-      burger_name: req.body.burger_name,
       devoured: req.body.devoured
     }, { 
-      where: { id: req.body.id }
+      where: { id: req.params.id }
     }).then(function(result){
       res.json(result);
     }).catch(function(err){
@@ -44,8 +40,7 @@ module.exports = function(app) {
     });
   });
   // ====================================================
-  app.delete("/api/burgers", function(req, res) {
-  
+  app.delete("/api/burgers/:id", function(req, res) {
     db.Burgers.destroy({
       where: {
         id: req.params.id
