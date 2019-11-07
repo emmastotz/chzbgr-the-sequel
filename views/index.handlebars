@@ -11,6 +11,7 @@
     {{!-- NEW/NOT EATEN BURGERS --}}
     <div class="col-6">
       <div class="jumbotron burgers-to-eat">
+
         <h4>Burger Menu</h4>
         <ul class="list-group list-group-flush">
           {{#each burgers}} {{#unless devoured}}
@@ -20,9 +21,11 @@
           </li>
           {{/unless}}{{/each}}
           <hr>
+          
         </ul>
       </div>
     </div>
+
     {{!-- EATEN BURGERS --}}
     <div class="col-6">
       <div class="jumbotron burgers-eaten">

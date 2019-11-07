@@ -4,11 +4,8 @@ $(function () {
     var id = $(this).data("id");
 
     var newBurger = {
-        burger_name: $("#new-burger").val().trim(),
+        burger_name: $("#new-burger").val().trim()
     };
-
-    console.log(newBurger.burger_name);
-    console.log(id);
 
     $.ajax("/api/burgers", {
       type: "POST",
