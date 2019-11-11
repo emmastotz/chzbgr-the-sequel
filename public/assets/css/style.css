@@ -1,72 +1,80 @@
 body {
-  background-image: url(../img/chzbgr-background.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: rgb(127, 25, 23);
+  background-image: url(../img/dark-honeycomb.png);
+  background-repeat: repeat;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 div.jumbo-logo {
   text-align: center;
   background-color: transparent !important;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
-img.chzbgr-logo{
-  animation-name: flipInX;
-  -webkit-animation-name: flipInX;
-  animation-duration: 5s;
-  -webkit-animation-duration: 5s;
+img.block-logo{
+  width: 50%;
+  height: auto;
 }
 
 li.list-group-item {
   background-color: transparent;
-}
-
-button {
-  padding: .5%;
-}
-
-button.add-burger {
-  margin-top: 2%; 
-}
-
-button.not-devoured {
-  margin-left: 2%; 
-}
-
-button.devoured {
-  margin-left: 2%; 
-}
-
-div.burger-add {
   text-align: center;
-  background-color: rgba(0, 0, 0, .5);
-  color: white;
+}
+
+.class-btn {
+  margin-bottom: 2%; 
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+  text-decoration: none;
+}
+
+div.subject-display {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
   padding-top: 2%;
   padding-bottom: 2%;
 }
 
-div.burgers-to-eat {
-  background-color: rgba(0, 0, 0, .5);
+div.classes-display {
+  background-color: rgba(255, 255, 255, 0.5);
   padding-top: 2%;
-  color: white;
+  color: black;
   text-align: center;
   padding-bottom: 0;
 }
 
-div.burgers-eaten {
-  background-color: rgba(0, 0, 0, .5);
+div.student-schedule {
+  background-color: rgba(255, 255, 255, 0.5);
   padding-top: 2%;
-  color: white;
+  color: black;
   text-align: center;
   padding-bottom: 0;
 }
 
 h4 {
   text-align: center;
-  color: white;
+  color: black;
 }
 
 div.footer {

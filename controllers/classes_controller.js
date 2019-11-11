@@ -6,20 +6,20 @@ const db = require("../models");
 // ROUTES
 // ====================================================
 module.exports = function(app) {
-  app.get("/", function(req, res) {
-    db.Burgers.findAll({}).then(function(result) {
-      var burgerObj = {
-        burgers: result
+  app.get("/", function(req, res){
+    db.Subjects.findAll({}).then(function(data) {
+      var dataObj = {
+        subject: data
       };
-      res.render("index", burgerObj);
-    }).catch(function(err){
-      res.json(400, err);
+      res.render("index",dataObj);
     });
   });
   // ====================================================
-  app.post("/api/burgers", function(req, res){
-    db.Burgers.create({
-      burger_name: req.body.burger_name
+  app.get("/:subjectKey", function(req, res) {
+    db.Classes.findAll({
+      where: {
+        SubjectId: req.params.subjectKey
+      }
     }).then(function(result){
       res.json(result);
     }).catch(function(err){
@@ -27,10 +27,10 @@ module.exports = function(app) {
     });
   });
   // ====================================================
-  app.put("/api/burgers/:id", function(req, res) {
-    console.log(req.body.devoured);
-    db.Burgers.update({
-      devoured: req.body.devoured
+  app.put("/api/classes/:id", function(req, res) {
+    console.log(req.body.inSchedule);
+    db.Classes.update({
+      inSchedule: req.body.inSchedule
     }, { 
       where: { id: req.params.id }
     }).then(function(result){
@@ -40,8 +40,8 @@ module.exports = function(app) {
     });
   });
   // ====================================================
-  app.delete("/api/burgers/:id", function(req, res) {
-    db.Burgers.destroy({
+  app.delete("/api/classes/:id", function(req, res) {
+    db.Classes.destroy({
       where: {
         id: req.params.id
       }
@@ -51,5 +51,6 @@ module.exports = function(app) {
       res.json(400, err);
     });
   });
+  // ====================================================
 };
 // ====================================================
