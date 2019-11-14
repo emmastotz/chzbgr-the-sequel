@@ -1,72 +1,49 @@
+{{!-- STUDENT SCHEDULE --}}
 <div class="container">
-  <div class="jumbotron jumbo-logo">
+  <div class="jumbotron student-schedule">
     <div class="container">
-      <img src="/assets/img/chzbgr-sequel-logo.svg" class="chzbgr-logo">
     </div>
   </div>
 </div>
 
+{{!-- CLASS INFO --}}
 <div class="container">
   <div class="row">
-    {{!-- NEW/NOT EATEN BURGERS --}}
-    <div class="col-6">
-      <div class="jumbotron burgers-to-eat">
 
-        <h4>Burger Menu</h4>
-        <ul class="list-group list-group-flush">
-          {{#each burgers}} {{#unless devoured}}
-          <li class="list-group-item">
-            {{burger_name}}
-            <button class="btn btn-secondary not-devoured" data-id="{{id}}">EAT</button>
-          </li>
-          {{/unless}}{{/each}}
-          <hr>
-          
-        </ul>
-      </div>
-    </div>
-
-    {{!-- EATEN BURGERS --}}
+    {{!-- SUBJECT --}}
     <div class="col-6">
-      <div class="jumbotron burgers-eaten">
-        <h4>Burgers Eaten</h4>
-        <ul class="list-group list-group-flush">
-          {{#each burgers}} {{#if devoured}}
+      <div class="jumbotron subject-display">
+        <h4>Choose a Subject</h4>
+        <ul class="list-group list-group-flush" id="subject-list">
+          {{#each subject}}
           <li class="list-group-item">
-            {{burger_name}}
-            <button class="btn btn-secondary devoured" data-id="{{id}}">DELETE</button>
+            <button class="btn btn-link subject-btn btn-sm" data-id="{{id}}" data-name="{{subject_name}}">{{subject_name}}</button>
           </li>
-          {{/if}}{{/each}}
+          {{/each}}
           <hr>
         </ul>
       </div>
     </div>
-  </div>
-</div>
 
-{{!-- ADD A NEW BURGER --}}
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="jumbotron burger-add">
-        <h4>What kind of burger are you craving?</h4>
-        <form>
-          <div class="form-group">
-            <label for="new-burger"></label>
-            <input type="text" class="form-control" id="new-burger" placeholder="">
-            <button type="submit" class="add-burger btn btn-secondary">Add Burger</button>
-          </div>
-        </form>
+    {{!-- CLASSES --}}
+    <div class="col-6">
+      <div class="jumbotron classes-display">
+        <h4>Classes</h4>
+        <ul class="list-group list-group-flush" id="classes-list">
+          {{!-- Display classes --}}
+        </ul>
       </div>
     </div>
+
   </div>
 </div>
 
+{{!-- FOOTER --}}
 <div class="container-fluid footer">
   <div class="row">
     <div class="col-12">
       <hr>
-      Created by Emma Stotz
+      Created by Alex Simuro, Andy Tran, Emma Stotz, Juan Munoz and Sandy Enow
     </div>
   </div>
 </div>
