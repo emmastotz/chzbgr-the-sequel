@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS block_db;
-CREATE DATABASE block_db;
